@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ACE - Application</title>
+  <style>
+    body {
+      background: #eef1f7;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #2c3e50;
+    }
+    .field {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #34495e;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    input[type="file"] {
+      padding: 5px;
+    }
+    textarea {
+      resize: vertical;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button:hover {
+      background-color: #3498db;
+    }
+  </style>
+</head>
+<body>
+
+  <form action="/submit" method="POST" enctype="multipart/form-data">
+    <h2>ACE ENGINEERING COLLEGE</h2>
+
+    <div class="field">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="field">
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob" required>
+    </div>
+
+    <div class="field">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="field">
+      <label for="phone">Mobile Number</label>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+    </div>
+
+    <div class="field">
+      <label for="branch">Preferred Branch</label>
+      <select id="branch" name="branch" required>
+        <option value="">-- Select Branch --</option>
+        <option value="CSE">Computer Science</option>
+        <option value="ECE">Electronics & Comm.</option>
+        <option value="ME">Mechanical</option>
+        <option value="CE">Civil</option>
+        <option value="EE">Electrical</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="score">Entrance Exam Score</label>
+      <input type="number" id="score" name="score" required>
+    </div>
+
+    <div class="field">
+      <label for="marks">12th Grade Percentage</label>
+      <input type="number" step="0.01" id="marks" name="marks" required>
+    </div>
+
+    <div class="field">
+      <label for="photo">Upload Photo</label>
+      <input type="file" id="photo" name="photo" accept="image/*" required>
+    </div>
+
+    <div class="field">
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+    </div>
+
+    <div class="field">
+      <label>
+        <input type="checkbox" name="declaration" required>
+        I confirm that the above details are correct.
+      </label>
+    </div>
+
+    <button type="submit">Submit Application</button>
+  </form>
+
+</body>
+</html>
